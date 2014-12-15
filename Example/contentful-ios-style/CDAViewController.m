@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Boris Bügling. All rights reserved.
 //
 
+#import <objc/runtime.h>
+#import <ContentfulStyle/UIColor+Contentful.h>
+
 #import "CDAViewController.h"
 
 @interface CDAViewController ()
@@ -18,6 +21,52 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    CGFloat yPos = 20.0;
+
+    for (NSString* fontSelector in @[@"bodyTextFont", @"buttonTitleFont", @"smallButtonTitleFont", @"tabTitleFont", @"titleBarFont"]) {
+        UILabel* someLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, yPos,
+                                                                       self.view.frame.size.width, 40.0)];
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        someLabel.font = [(id)[UIFont class] performSelector:NSSelectorFromString(fontSelector)];
+#pragma clang diagnostic pop
+
+        someLabel.text = fontSelector;
+        [self.view addSubview:someLabel];
+
+        yPos += someLabel.frame.size.height + 10.0;
+    }
+
+    unsigned int numberOfMethods = 0;
+    Method* methods = class_copyMethodList(object_getClass([UIColor class]), &numberOfMethods);
+
+    CGFloat xPos = 0.0;
+
+    [UIColor contentfulBackgroundColor];
+
+    for (int i = 0; i < numberOfMethods; i++) {
+        SEL selector = method_getName(methods[i]);
+
+        NSString* methodName = NSStringFromSelector(selector);
+        if (![methodName hasPrefix:@"contentful"]) {
+            continue;
+        }
+
+        UIView* view = [[UIView alloc] initWithFrame:CGRectMake(xPos, yPos, 40.0, self.view.frame.size.height - yPos)];
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        view.backgroundColor = [(id)[UIColor class] performSelector:selector];
+#pragma clang diagnostic pop
+
+        [self.view addSubview:view];
+
+        xPos += view.frame.size.width;
+    }
+
+    free(methods);
 }
 
 - (void)didReceiveMemoryWarning
