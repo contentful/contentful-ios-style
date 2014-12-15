@@ -1,11 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'contentful-ios-style', :exclusive => true do
-  pod "contentful-ios-style", :path => "../"
+  pod "ContentfulStyle", :path => "../"
 end
 
 target 'Tests', :exclusive => true do
-  pod "contentful-ios-style", :path => "../"
+  pod "ContentfulStyle", :path => "../"
 
   pod 'Specta', '~> 0.2.1'
   pod 'Expecta'
