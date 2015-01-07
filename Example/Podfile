@@ -7,8 +7,8 @@ end
 target 'Tests', :exclusive => true do
   pod "ContentfulStyle", :path => "../"
 
-  pod 'Specta', '~> 0.2.1'
+  pod 'Specta', '~> 0.2.1', :inhibit_warnings => true
   pod 'Expecta'
   pod 'FBSnapshotTestCase'
-  pod 'Expecta+Snapshots'
+  pod 'Expecta+Snapshots', '~> 1.2.1'
 end

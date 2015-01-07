@@ -13,8 +13,6 @@ This project contains the assets and code required to make an iOS project with s
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
-
 ## Installation
 
 contentful-ios-style is available through [CocoaPods](http://cocoapods.org). To install

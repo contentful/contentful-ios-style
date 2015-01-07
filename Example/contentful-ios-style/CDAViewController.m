@@ -9,6 +9,13 @@
 #import <objc/runtime.h>
 #import <ContentfulStyle/UIColor+Contentful.h>
 
+// From: http://google-toolbox-for-mac.googlecode.com/svn@19/tags/google-toolbox-for-mac-1.5.1/UnitTesting/GTMIPhoneUnitTestDelegate.m
+static int MethodSort(const void *a, const void *b) {
+    const char *nameA = sel_getName(method_getName(*(Method*)a));
+    const char *nameB = sel_getName(method_getName(*(Method*)b));
+    return strcmp(nameA, nameB);
+}
+
 #import "CDAViewController.h"
 
 @interface CDAViewController ()
@@ -41,6 +48,7 @@
 
     unsigned int numberOfMethods = 0;
     Method* methods = class_copyMethodList(object_getClass([UIColor class]), &numberOfMethods);
+    qsort(methods, numberOfMethods, sizeof(Method), MethodSort);
 
     CGFloat xPos = 0.0;
 
