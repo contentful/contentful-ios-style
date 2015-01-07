@@ -1,6 +1,5 @@
 language: objective-c
 before_install:
-- gem install cocoapods-coverage --no-rdoc --no-ri --no-document --quiet
-- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
-- pod install --project-directory=Example
-script: pod lib coverage
+- bundle install
+- bundle exec pod install --project-directory=Example
+script: bundle exec pod lib coverage
