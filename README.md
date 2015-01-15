@@ -18,7 +18,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 contentful-ios-style is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-    pod "contentful-ios-style", :git => 'git@github.com:contentful/contentful-ios-style.git'
+    pod 'ContentfulStyle', :git => 'git@github.com:contentful/contentful-ios-style.git'
 
 ## Author
 

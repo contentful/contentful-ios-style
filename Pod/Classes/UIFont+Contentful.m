@@ -13,23 +13,23 @@
 @implementation UIFont (Contentful)
 
 +(UIFont *)bodyTextFont {
-    return [UIFont latoFontOfSize:16.0];
+    return [UIFont latoFontOfSize:17.0];
 }
 
 +(UIFont *)buttonTitleFont {
-    return [UIFont latoFontOfSize:18.0];
+    return [UIFont latoFontOfSize:19.0];
 }
 
 +(UIFont *)smallButtonTitleFont {
-    return [UIFont latoFontOfSize:14.0];
+    return [UIFont latoFontOfSize:15.0];
 }
 
 +(UIFont *)tabTitleFont {
-    return [UIFont latoFontOfSize:14.0];
+    return [UIFont latoFontOfSize:15.0];
 }
 
 +(UIFont *)titleBarFont {
-    return [UIFont latoFontOfSize:17.0];
+    return [UIFont latoFontOfSize:18.0];
 }
 
 @end

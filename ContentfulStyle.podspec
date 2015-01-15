@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ContentfulStyle"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "Assets and code required to make an iOS project with standard Contentful design."
   s.homepage         = "https://github.com/contentful/contentful-ios-style"
   s.license          = 'MIT'
