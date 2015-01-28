@@ -11,6 +11,7 @@
 @interface UIFont (Contentful)
 
 +(UIFont*)bodyTextFont;
++(UIFont*)boldTitleFont;
 +(UIFont*)buttonTitleFont;
 +(UIFont*)smallButtonTitleFont;
 +(UIFont*)tabTitleFont;

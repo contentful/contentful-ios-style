@@ -31,7 +31,7 @@ static int MethodSort(const void *a, const void *b) {
 
     CGFloat yPos = 20.0;
 
-    for (NSString* fontSelector in @[@"bodyTextFont", @"buttonTitleFont", @"smallButtonTitleFont", @"tabTitleFont", @"titleBarFont"]) {
+    for (NSString* fontSelector in @[@"bodyTextFont", @"boldTitleFont", @"buttonTitleFont", @"smallButtonTitleFont", @"tabTitleFont", @"titleBarFont"]) {
         UILabel* someLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, yPos,
                                                                        self.view.frame.size.width, 40.0)];
 

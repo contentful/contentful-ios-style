@@ -16,6 +16,10 @@
     return [UIFont latoFontOfSize:17.0];
 }
 
++(UIFont *)boldTitleFont {
+    return [UIFont latoBoldFontOfSize:18.0];
+}
+
 +(UIFont *)buttonTitleFont {
     return [UIFont latoFontOfSize:19.0];
 }
