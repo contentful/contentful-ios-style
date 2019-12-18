@@ -1,14 +1,23 @@
 source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.4'
 
-target 'contentful-ios-style', :exclusive => true do
+
+target 'contentful-ios-style' do
   pod "ContentfulStyle", :path => "../"
 end
 
-target 'Tests', :exclusive => true do
+target 'Tests' do
   pod "ContentfulStyle", :path => "../"
 
-  pod 'Specta', '~> 0.2.1', :inhibit_warnings => true
+  pod 'Specta', '~> 1.0.7', :inhibit_warnings => true
   pod 'Expecta'
   pod 'FBSnapshotTestCase'
   pod 'Expecta+Snapshots', '~> 1.2.1'
+end
+pre_install do |installer|
+	installer.analysis_result.specifications.each do |s|
+        if s.name == 'FBSnapshotTestCase'
+            s.swift_version = '4.2'
+        end
+    end
 end

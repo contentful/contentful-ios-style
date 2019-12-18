@@ -6,34 +6,33 @@
 //
 //
 
-#import <LatoFont/UIFont+Lato.h>
 
 #import "UIFont+Contentful.h"
 
 @implementation UIFont (Contentful)
 
 +(UIFont *)bodyTextFont {
-    return [UIFont latoFontOfSize:17.0];
+    return [UIFont systemFontOfSize:17.0];
 }
 
 +(UIFont *)boldTitleFont {
-    return [UIFont latoBoldFontOfSize:18.0];
+    return [UIFont boldSystemFontOfSize:18.0];
 }
 
 +(UIFont *)buttonTitleFont {
-    return [UIFont latoFontOfSize:19.0];
+    return [UIFont systemFontOfSize:19.0];
 }
 
 +(UIFont *)smallButtonTitleFont {
-    return [UIFont latoFontOfSize:15.0];
+    return [UIFont systemFontOfSize:15.0];
 }
 
 +(UIFont *)tabTitleFont {
-    return [UIFont latoFontOfSize:15.0];
+    return [UIFont systemFontOfSize:15.0];
 }
 
 +(UIFont *)titleBarFont {
-    return [UIFont latoFontOfSize:18.0];
+    return [UIFont systemFontOfSize:18.0];
 }
 
 @end

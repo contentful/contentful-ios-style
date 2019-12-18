@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ContentfulStyle"
-  s.version          = "0.2.0"
+  s.version          = "0.3.0"
   s.summary          = "Assets and code required to make an iOS project with standard Contentful design."
   s.homepage         = "https://github.com/contentful/contentful-ios-style"
   s.license          = 'MIT'
@@ -16,7 +16,5 @@ Pod::Spec.new do |s|
   s.public_header_files = 'Pod/Classes/**/*.h'
 
   s.frameworks = 'UIKit'
-
-  s.dependency 'LatoFont'
   s.dependency 'EDColor'
 end
